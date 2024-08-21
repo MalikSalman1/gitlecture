@@ -58,7 +58,7 @@
         boxes.forEach(element => {
             let color = ['green','blue','yellow','orange','purple','pink','brown','black','white'];
             // choose a random color from the array
-            let random = 
+            let random = Math.floor(Math.random() * color.length);
             
             console.log(color[random],random);
             console.log(element)
