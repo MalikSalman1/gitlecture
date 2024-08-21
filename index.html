@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .note{
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notes Application</h1>
+    <form action="">
+        <input type="text" name="note" id="note">
+        <button id="btn" type="submit">Add Note</button>
+    </form>
+    <div id="notes">
+        
+    </div>
+    <script>
+        // DOM Manipulation
+        // document.getElementById('id') -> element
+        // document.getElementsByClassName('class') -> HTMLCollection
+        // document.getElementsByTagName('tag') -> HTMLCollection
+        // document.querySelector('css selector') -> element
+        // document.querySelectorAll('css selector') -> NodeList
+
+        // let container = document.getElementById('container');
+        // var paragraph = document.createElement('p');
+        // paragraph.innerText = 'This is a paragraph';
+        // container.insertAdjacentElement('beforeend', paragraph);
+        // var paragraph2 = document.createElement('p');
+        // paragraph2.innerText = 'This is a paragraph';
+        // let box = document.getElementsByClassName('box');
+        // box[0].insertAdjacentElement('beforeend',paragraph2);
+
+        // select by uerySelector
+        // let boxes = document.querySelectorAll('.box');
+        // let newcontainer = document.createElement('div');
+        // newcontainer.innerText = 'This is a new container';
+        // newcontainer.setAttribute('class','box');
+        // boxes[0].insertAdjacentElement('beforebegin',newcontainer);
+
+        // boxes = document.querySelectorAll('.box');
+        // boxes[1].style.backgroundColor = 'blue';
+        // boxes[1].style.width = '200px';
+        // boxes[1].style.height = '200px';
+        // let newbox = document.createElement('div');
+        // newbox.setAttribute('class','box');
+        // newbox.style.backgroundColor = 'green';
+        // // add new before the boxes[1]
+        // boxes[1].insertAdjacentElement('afterend',newbox);
+
+        // console.log(boxes);
+
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click',function(e){
+          e.preventDefault();
+            let note = document.getElementById('note');
+            console.log(note);
+            let notes = document.getElementById('notes');
+            let newNote = document.createElement('div');
+            newNote.innerText = note.value;
+            newNote.setAttribute('class','note');
+            notes.insertAdjacentElement('afterend',newNote);
+            document.title = note.value;
+            note.value = '';
+        });
+        
+
+        
+    </script>
+</body>
+</html>
